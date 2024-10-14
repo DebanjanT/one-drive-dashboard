@@ -1,22 +1,29 @@
-import React from 'react';
-import { Search, Diamond, Link, Settings, HelpCircle, User } from 'lucide-react';
+import {
+  Search,
+  Diamond,
+  Link,
+  Settings,
+  HelpCircle,
+  User,
+} from "lucide-react";
+import DtdLogo from "../assets/Images/dtd-nobg.png";
 
 const Header = () => {
   return (
-    <header className="bg-white border-b border-gray-200 py-2 px-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <span className="text-xl font-semibold">OneDrive</span>
-          <div className="relative">
+    <header className="bg-surface border-b border-inputBorder/70 py-2 px-4 h-[55px]">
+      <div className="flex items-center justify-between h-full">
+        <div className="flex items-center space-x-4  flex-grow  w-full">
+          <img src={DtdLogo} className="w-auto h-10" />
+          <div className="relative w-full hidden md:block">
             <input
               type="text"
               placeholder="Search everything"
-              className="pl-10 pr-4 py-2 w-96 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="pl-10 pr-4 py-2 disabled:bg-inputDisabled disabled:cursor-not-allowed w-56 focus:w-full transition-[width] duration-300 border border-gray-400  focus:border-primary rounded-md text-sm focus:outline-none focus:shadow-inputOuterShadow"
             />
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
           </div>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ml-3">
           <Diamond className="h-5 w-5 text-gray-600" />
           <Link className="h-5 w-5 text-gray-600" />
           <Settings className="h-5 w-5 text-gray-600" />
